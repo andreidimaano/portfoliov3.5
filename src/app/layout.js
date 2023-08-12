@@ -1,9 +1,8 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 import Link from "next/link";
-import { archivo } from "./font";
-
-const inter = Inter({ subsets: ["latin"] });
+import { archivo, inter } from "./font";
+import Navigation from "./navigation";
+import Header from "./header";
 
 export const metadata = {
   title: "Create Next App",
@@ -14,56 +13,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            zIndex: 1,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            width: "100%",
-            padding: "0.25rem 1.5rem",
-          }}
-        >
-          <Link
-            href="/"
-            style={{
-              display: "flex",
-              gap: "5rem",
-              alignItems: "center",
-              fontSize: "0.8rem",
-              lineHeight: "1.2rem",
-              fontWeight: 500,
-            }}
-            className={inter.className}
-          >
-            ANDREI DIMAANO
-          </Link>
-          <div
-            style={{
-              fontSize: "0.8rem",
-              fontWeight: 500,
-            }}
-          >
-            MENU
-          </div>
-        </header>
+        <Header />
         {children}
-        <footer
-          style={{
-            position: "fixed",
-            bottom: 0,
-            left: 0,
-            zIndex: 1,
-            display: "flex",
-            justifyContent: "flex-end",
-            gap: "1rem",
-            width: "100%",
-            padding: "0.25rem 1.5rem",
-          }}
-        >
+        <footer className="footer">
           <Link
             style={{
               fontSize: "0.8rem",
@@ -87,6 +39,7 @@ export default function RootLayout({ children }) {
             GITHUB
           </Link>
         </footer>
+        <Navigation />
       </body>
     </html>
   );
