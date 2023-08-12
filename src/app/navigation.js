@@ -5,8 +5,23 @@ import Link from "next/link";
 import { RotatingText } from "rotating-text";
 import "rotating-text/dist/index.css";
 import { archivo } from "./font";
+import { useMenu } from "./header";
+import { useCallback } from "react";
 
 export default function Navigation() {
+  const { menuOpen, setMenuOpen } = useMenu();
+
+  let clearMenu = useCallback(() => {
+    let nav = document.getElementById("nav");
+    if (nav.style.display == "flex") {
+      nav.classList.add("fade_out_nav");
+      setTimeout(() => {
+        nav.style.display = "none";
+        nav.classList.remove("fade_out_nav");
+      }, 750);
+      setMenuOpen(false);
+    }
+  }, [setMenuOpen]);
   return (
     <div
       id="nav"
@@ -28,6 +43,9 @@ export default function Navigation() {
             alignItems: "flex-start",
           }}
           href="/works"
+          onClick={() => {
+            clearMenu();
+          }}
         >
           <RotatingText
             text="WORKS"
@@ -43,6 +61,9 @@ export default function Navigation() {
             alignItems: "flex-end",
           }}
           href="/biography"
+          onClick={() => {
+            clearMenu();
+          }}
         >
           <RotatingText
             text="BIOGRAPHY"
@@ -71,6 +92,9 @@ export default function Navigation() {
               padding: "1rem 0",
             }}
             href="/archive"
+            onClick={() => {
+              clearMenu();
+            }}
           >
             <RotatingText
               text="ARCHIVE"

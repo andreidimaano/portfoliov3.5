@@ -1,12 +1,28 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, createContext, useState } from "react";
 import { inter } from "./font";
 import "./globals.css";
 
-export default function Header() {
-  const [navOpen, setNavOpen] = useState(false);
+const MenuContext = createContext();
+
+export function MenuProvider({ children }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <MenuContext.Provider value={{ menuOpen, setMenuOpen }}>
+      {children}
+    </MenuContext.Provider>
+  );
+}
+
+export function useMenu() {
+  return useContext(MenuContext);
+}
+
+export function Header() {
+  const { menuOpen, setMenuOpen } = useMenu();
 
   return (
     <header
@@ -19,7 +35,7 @@ export default function Header() {
         alignItems: "center",
         justifyContent: "space-between",
         width: "100%",
-        padding: "0.25rem 1.5rem",
+        padding: "0.25rem 1rem",
       }}
     >
       <Link
@@ -47,21 +63,21 @@ export default function Header() {
           if (nav.style.display == "none") {
             nav.classList.add("fade_in_nav");
             nav.style.display = "flex";
+            setMenuOpen(true);
             setTimeout(() => {
               nav.classList.remove("fade_in_nav");
             }, 300);
-            setNavOpen(true);
           } else {
             nav.classList.add("fade_out_nav");
+            setMenuOpen(false);
             setTimeout(() => {
               nav.style.display = "none";
               nav.classList.remove("fade_out_nav");
-            }, 300);
-            setNavOpen(false);
+            }, 750);
           }
         }}
       >
-        {navOpen ? "CLOSE" : "MENU"}
+        {menuOpen ? "CLOSE" : "MENU"}
       </div>
     </header>
   );

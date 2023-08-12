@@ -1,0 +1,33 @@
+.biography {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+}
+
+.profile_svg {
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+}
+
+.bar_img_intro {
+  display: flex;
+  align-items: flex-end;
+}
+
+.bar_img_text {
+  font-size: 0.8rem;
+  margin-top: 0;
+}
+
+.bar_img_top {
+  font-weight: 600;
+}

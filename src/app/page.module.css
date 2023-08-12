@@ -26,6 +26,26 @@
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.link:after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 2px;
+  animation: underline 2s infinite;
+}
+
+@keyframes underline {
+  0% {
+    width: 0%;
+    background-color: black;
+  }
+  100% {
+    width: 100%;
+    background-color: transparent;
+  }
 }
 
 /* Tablet and Smaller Desktop */

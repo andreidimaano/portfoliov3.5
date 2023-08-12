@@ -2,7 +2,8 @@ import "./globals.css";
 import Link from "next/link";
 import { archivo, inter } from "./font";
 import Navigation from "./navigation";
-import Header from "./header";
+import { Header, MenuProvider } from "./header";
+import Footer from "./footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,33 +14,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
-        <footer className="footer">
-          <Link
-            style={{
-              fontSize: "0.8rem",
-              fontWeight: 500,
-            }}
-            target="_blank"
-            className={archivo.className}
-            href="https://www.linkedin.com/in/andrei-dimaano/"
-          >
-            LINKEDIN
-          </Link>
-          <Link
-            style={{
-              fontSize: "0.8rem",
-              fontWeight: 500,
-            }}
-            target="_blank"
-            className={archivo.className}
-            href="https://github.com/andreidimaano"
-          >
-            GITHUB
-          </Link>
-        </footer>
-        <Navigation />
+        <MenuProvider>
+          <Header />
+          {children}
+          <Footer />
+          <Navigation />
+        </MenuProvider>
       </body>
     </html>
   );
