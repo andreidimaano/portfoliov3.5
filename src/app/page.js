@@ -1,95 +1,136 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+
+import Image from "next/image";
+import styles from "./page.module.css";
+
+import { archivo, pinyon_script } from "./font";
+
+import japan from "../images/japan.jpg";
+import versaille from "../images/versaille.jpg";
+
+import { RotatingText } from "rotating-text";
+import "rotating-text/dist/index.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          flexGrow: "1",
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "1.5rem",
+          }}
+        >
+          <Link href="/works">
+            <RotatingText
+              text="WORKS"
+              stagger={0.1}
+              timing={0.5}
+              className={`${archivo.className} rotating-text`}
+              style={{
+                fontSize: "2rem",
+                fontWeight: 500,
+              }}
             />
-          </a>
+          </Link>
+          <Image
+            src={versaille}
+            height={60}
+            width={200}
+            alt="picture of me at chateau de versaille"
+          />
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+          <span
+            style={{
+              fontSize: "3rem",
+              lineHeight: 1,
+            }}
+            className={pinyon_script.className}
+          >
+            andrei
+          </span>
+          <Link href="/biography">
+            <RotatingText
+              text="BIOGRAPHY"
+              stagger={0.1}
+              timing={0.5}
+              className="rotating-text"
+              style={{
+                fontSize: "2rem",
+                fontWeight: 500,
+              }}
+            />
+          </Link>
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+          <Link href="/archive">
+            <RotatingText
+              text="ARCHIVE"
+              stagger={0.1}
+              timing={0.5}
+              className={`${archivo.className} rotating-text`}
+              style={{
+                fontSize: "1.25rem",
+                fontWeight: 500,
+              }}
+            />
+          </Link>
+          <span
+            style={{
+              fontSize: "3rem",
+              lineHeight: 1,
+            }}
+            className={pinyon_script.className}
+          >
+            dimaano
+          </span>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "1.5rem",
+          }}
+        >
+          {" "}
+          <Image
+            src={japan}
+            height={60}
+            width={200}
+            alt="picture of me at the fushimi inari taisha shrines"
+          />
+          <Link
+            target="_blank"
+            href="https://drive.google.com/file/d/1zWv-SvIjuuBI5WuH1pOVTdAM_cOdjqo2/view?usp=sharing"
+          >
+            <RotatingText
+              text="RESUME"
+              stagger={0.1}
+              timing={0.5}
+              className={`${archivo.className} rotating-text`}
+              style={{
+                fontSize: "1rem",
+                fontWeight: 500,
+              }}
+            />
+          </Link>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
-  )
+  );
 }
