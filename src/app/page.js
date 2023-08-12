@@ -15,25 +15,8 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          flexGrow: "1",
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "1.5rem",
-          }}
-        >
+      <div className={styles.menu_card}>
+        <div className={styles.menu_card_item}>
           <Link href="/works">
             <RotatingText
               text="WORKS"
@@ -41,7 +24,7 @@ export default function Home() {
               timing={0.5}
               className={`${archivo.className} rotating-text`}
               style={{
-                fontSize: "2rem",
+                fontSize: "clamp(3rem, 6vw, 6vw)",
                 fontWeight: 500,
               }}
             />
@@ -53,10 +36,10 @@ export default function Home() {
             alt="picture of me at chateau de versaille"
           />
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+        <div className={styles.menu_card_item}>
           <span
             style={{
-              fontSize: "3rem",
+              fontSize: "clamp(2.5rem, 4.75vw, 4.75vw)",
               lineHeight: 1,
             }}
             className={pinyon_script.className}
@@ -70,13 +53,13 @@ export default function Home() {
               timing={0.5}
               className="rotating-text"
               style={{
-                fontSize: "2rem",
+                fontSize: "clamp(1rem, 5vw, 5vw)",
                 fontWeight: 500,
               }}
             />
           </Link>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+        <div className={styles.menu_card_item}>
           <Link href="/archive">
             <RotatingText
               text="ARCHIVE"
@@ -84,14 +67,14 @@ export default function Home() {
               timing={0.5}
               className={`${archivo.className} rotating-text`}
               style={{
-                fontSize: "1.25rem",
+                fontSize: "clamp(1rem, 3vw, 3vw)",
                 fontWeight: 500,
               }}
             />
           </Link>
           <span
             style={{
-              fontSize: "3rem",
+              fontSize: "clamp(2.5rem, 4.75vw, 4.75vw)",
               lineHeight: 1,
             }}
             className={pinyon_script.className}
@@ -99,15 +82,7 @@ export default function Home() {
             dimaano
           </span>
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "1.5rem",
-          }}
-        >
-          {" "}
+        <div className={styles.menu_card_item}>
           <Image
             src={japan}
             height={60}
@@ -124,7 +99,7 @@ export default function Home() {
               timing={0.5}
               className={`${archivo.className} rotating-text`}
               style={{
-                fontSize: "1rem",
+                fontSize: "clamp(1rem, 4.5vw, 4.5vw)",
                 fontWeight: 500,
               }}
             />
