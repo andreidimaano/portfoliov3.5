@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./works.module.css";
 
-import ig from "./ig.jpg";
-import iu from "./iu.png";
-import md from "./md.png";
+import ig from "./images/ig.jpg";
+import iu from "./images/iu.png";
+import md from "./images/md.png";
 import { archivo } from "../font";
 
 export default function Works() {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import ig from "./ig.jpg";
-import metamates from "./metamates.jpg";
+import ig from "./images/ig.jpg";
+import metamates from "./images/metamates.jpg";
 
 export default function WorkBlurb() {
   return (

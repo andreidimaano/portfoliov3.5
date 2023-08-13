@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
-import ucr from "./ucr.jpg";
-import yonsei from "./yonsei.jpg";
+import ucr from "./images/ucr.jpg";
+import yonsei from "./images/yonsei.jpg";
 
 export default function SchoolBlurb() {
   return (
