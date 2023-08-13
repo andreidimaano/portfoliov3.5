@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./biography.module.css";
 
-import peace from "./images/peace.JPG";
+import peace from "./images/peace.jpg";
 import ProfileSvg from "./profile_svg";
 export default function Magazine() {
   return (
