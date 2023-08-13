@@ -63,12 +63,21 @@ export default function Home() {
               }}
             />
           </Link>
-          <Image
-            src={versaille}
-            height={60}
-            width={200}
-            alt="picture of me at chateau de versaille"
-          />
+          <div
+            style={{
+              width: "200px",
+              height: "65px",
+              position: "relative",
+            }}
+          >
+            <Image
+              src={versaille}
+              width={0}
+              height={0}
+              style={{ width: "100%", height: "100%" }}
+              alt="picture of me at the fushimi inari taisha shrines"
+            />
+          </div>
         </div>
         <div className={styles.menu_card_item}>
           <span
@@ -131,12 +140,21 @@ export default function Home() {
           </span>
         </div>
         <div className={styles.menu_card_item}>
-          <Image
-            src={japan}
-            height={60}
-            width={200}
-            alt="picture of me at the fushimi inari taisha shrines"
-          />
+          <div
+            style={{
+              width: "200px",
+              height: "65px",
+              position: "relative",
+            }}
+          >
+            <Image
+              src={japan}
+              width={0}
+              height={0}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              alt="picture of me at the fushimi inari taisha shrines"
+            />
+          </div>
           <Link
             id="resume_home"
             className="menu-link"

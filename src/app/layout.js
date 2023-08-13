@@ -1,9 +1,8 @@
-import "./globals.css";
-import Link from "next/link";
-import { archivo, inter } from "./font";
-import Navigation from "./navigation";
-import { Header, MenuProvider } from "./header";
+import { inter } from "./font";
 import Footer from "./footer";
+import "./globals.css";
+import { Header, MenuProvider } from "./header";
+import Navigation from "./navigation";
 
 export const metadata = {
   title: "Create Next App",

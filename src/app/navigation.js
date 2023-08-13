@@ -76,8 +76,9 @@ export default function Navigation() {
       <div className="hr" />
       <div
         style={{
+          display: "flex",
+          flexDirection: "column",
           flex: 1,
-          gap: "2rem",
           height: "100%",
         }}
       >
@@ -112,13 +113,14 @@ export default function Navigation() {
             height: "100%",
             gap: "2rem",
             alignItems: "flex-end",
+            paddingTop: "1rem",
           }}
         >
           <Link
             style={{
               display: "flex",
               width: "100%",
-              paddingBottom: "5rem",
+              paddingBottom: "10px",
             }}
             target="_blank"
             href="https://drive.google.com/file/d/1zWv-SvIjuuBI5WuH1pOVTdAM_cOdjqo2/view?usp=sharing"
@@ -135,11 +137,21 @@ export default function Navigation() {
             style={{
               display: "flex",
               width: "100%",
-              paddingBottom: "4.75rem",
+              paddingBottom: "0rem",
               justifyContent: "flex-end",
             }}
           >
-            <p>ANDREI 🤩</p>
+            <Link
+              target="_blank"
+              href="https://www.instagram.com/andrei.dimaano/"
+            >
+              <RotatingText
+                text="ANDREI&nbsp;🤩"
+                stagger={0.1}
+                timing={0.5}
+                className="rotating-text"
+              />
+            </Link>
           </div>
         </div>
       </div>

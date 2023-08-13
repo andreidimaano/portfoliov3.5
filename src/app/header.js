@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState, useCallback } from "react";
 import { inter } from "./font";
 import "./globals.css";
 
@@ -23,6 +23,18 @@ export function useMenu() {
 
 export function Header() {
   const { menuOpen, setMenuOpen } = useMenu();
+
+  let clearMenu = useCallback(() => {
+    let nav = document.getElementById("nav");
+    if (nav.style.display == "flex") {
+      nav.classList.add("fade_out_nav");
+      setTimeout(() => {
+        nav.style.display = "none";
+        nav.classList.remove("fade_out_nav");
+      }, 750);
+      setMenuOpen(false);
+    }
+  }, [setMenuOpen]);
 
   return (
     <header
@@ -49,6 +61,9 @@ export function Header() {
           fontWeight: 500,
         }}
         className={inter.className}
+        onClick={() => {
+          clearMenu();
+        }}
       >
         ANDREI DIMAANO
       </Link>
