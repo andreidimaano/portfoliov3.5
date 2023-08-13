@@ -167,7 +167,7 @@ export default function Works() {
                   I worked at Meta in Summer 2023.
                   <br />
                   <br />
-                  I was on the Instagram Reels Recommendation Reliability Team.
+                  I was on the Instagram Reels RecSys Reliability Team.
                   <br />
                   <br />I made DevX tools for my fellow engineers and worked on
                   making IG Reels ✨reliable, fast, and efficient✨

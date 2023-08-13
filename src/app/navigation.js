@@ -130,6 +130,9 @@ export default function Navigation() {
               stagger={0.1}
               timing={0.5}
               className="rotating-text"
+              style={{
+                fontSize: "2rem"
+              }}
             />
           </Link>
           <div className="vr" />
@@ -150,6 +153,9 @@ export default function Navigation() {
                 stagger={0.1}
                 timing={0.5}
                 className="rotating-text"
+                style={{
+                  fontSize: "1rem"
+                }}
               />
             </Link>
           </div>
