@@ -131,7 +131,7 @@ export default function Navigation() {
               timing={0.5}
               className="rotating-text"
               style={{
-                fontSize: "2rem"
+                fontSize: "2rem",
               }}
             />
           </Link>
@@ -154,7 +154,7 @@ export default function Navigation() {
                 timing={0.5}
                 className="rotating-text"
                 style={{
-                  fontSize: "1rem"
+                  fontSize: "1rem",
                 }}
               />
             </Link>

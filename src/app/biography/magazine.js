@@ -1,13 +1,20 @@
 import Image from "next/image";
 import styles from "./biography.module.css";
 
+import { playfair } from "../font";
 import peace from "./images/peace.jpg";
-import ProfileSvg from "./profile_svg";
 export default function Magazine() {
   return (
     <div>
-      <div className={styles.profile}>
-        <ProfileSvg />
+      <div className={`${styles.profile} ${playfair.className}`}>
+        <p
+          style={{
+            fontSize: "clamp(115px, 22vw ,188.625px)",
+          }}
+          className={styles.profile_svg}
+        >
+          PROFILE
+        </p>
       </div>
       <div class={styles.bar_img_intro}>
         <div
